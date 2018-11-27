@@ -14,7 +14,10 @@ function insert_line () {
 cd $HOME
 git clone https://github.com/gpakosz/.tmux
 ln -s -f .tmux/.tmux.conf
-ln -s -f $DIR/tmux .tmux.conf.local
+ln -s -f $DIR/tmux $HOME/.tmux.conf.local
+
+# nano
+ln -s -f $DIR/nano $HOME/.nanorc
 
 # bash
 insert_line "source $DIR/bash" "$HOME/.bashrc"

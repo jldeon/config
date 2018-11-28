@@ -10,6 +10,11 @@ function insert_line () {
     grep -qF -- "$LINE" "$FILE" || echo "$LINE" >> "$FILE"
 }
 
+function remove_line () {
+    SEDSTRING="/$1/d"
+    sed -i.bak $SEDSTRING $2
+}
+
 # tmux
 cd $HOME
 if [[ ! -d '.tmux' ]]; then
@@ -22,6 +27,8 @@ ln -s -f $DIR/tmux.cfg $HOME/.tmux.conf.local
 ln -s -f $DIR/nano.cfg $HOME/.nanorc
 
 # bash
-insert_line "source $DIR/bash.cfg" "$HOME/.bashrc"
+remove_line "JLDCFGDIR" "$HOME/.bashrc"
+insert_line "export JLDCFGDIR=\"$DIR\"" "$HOME/.bashrc"
+insert_line "source $JLDCFGDIR/bash.cfg" "$HOME/.bashrc"
 
 echo "Done!"

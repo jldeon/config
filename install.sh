@@ -29,6 +29,6 @@ ln -s -f $DIR/nano.cfg $HOME/.nanorc
 # bash
 remove_line "JLDCFGDIR" "$HOME/.bashrc"
 insert_line "export JLDCFGDIR=\"$DIR\"" "$HOME/.bashrc"
-insert_line "source $JLDCFGDIR/bash.cfg" "$HOME/.bashrc"
+insert_line 'source $JLDCFGDIR/bash.cfg' "$HOME/.bashrc"
 
 echo "Done!"

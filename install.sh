@@ -17,14 +17,16 @@ function remove_line () {
 
 # tmux
 cd $HOME
-if [[ ! -d '.tmux' ]]; then
-    git clone https://github.com/gpakosz/.tmux
-    ln -s -f .tmux/.tmux.conf
-fi
+ln -s -f $DIR/tmux-omt/.tmux.conf
 ln -s -f $DIR/tmux.cfg $HOME/.tmux.conf.local
 
 # nano
 ln -s -f $DIR/nano.cfg $HOME/.nanorc
+
+# vim
+mkdir -p $HOME/.vim/colors/
+ln -s -f $DIR/vim-monokai/monokai.vim $HOME/.vim/colors/monokai.vim
+ln -s $DIR/vim.cfg $HOME/.vimrc
 
 # bash
 remove_line "JLDCFGDIR" "$HOME/.bashrc"

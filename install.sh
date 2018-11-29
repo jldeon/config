@@ -26,7 +26,7 @@ ln -s -f $DIR/nano.cfg $HOME/.nanorc
 # vim
 mkdir -p $HOME/.vim/colors/
 ln -s -f $DIR/vim-monokai/colors/monokai.vim $HOME/.vim/colors/monokai.vim
-ln -s $DIR/vim.cfg $HOME/.vimrc
+ln -s -f $DIR/vim.cfg $HOME/.vimrc
 
 # bash
 remove_line "JLDCFGDIR" "$HOME/.bashrc"

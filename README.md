@@ -4,7 +4,8 @@ cd $HOME
 git clone https://github.com/jldeon/config.git $CFGDIR
 cd $CFGDIR
 git submodule init
-$CFGDIR/install.sh
+git submodule update
+./install.sh
 . $CFGDIR/bash.cfg
 
 ```

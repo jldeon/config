@@ -28,6 +28,12 @@ mkdir -p $HOME/.vim/colors/
 ln -s -f $DIR/vim-monokai/colors/monokai.vim $HOME/.vim/colors/monokai.vim
 ln -s -f $DIR/vim.cfg $HOME/.vimrc
 
+# sublime
+SUBLIME_PREF_DIR=$HOME/.config/sublime-text-3/Packages/User/
+mkdir -p $SUBLIME_PREF_DIR
+mv $SUBLIME_PREF_DIR/Preferences.sublime-settings $SUBLIME_PREF_DIR/Preferences.jldcfg.bak
+ln -s $DIR/sublime.cfg $SUBLIME_PREF_DIR/Preferences.sublime-settings
+
 # bash
 remove_line "JLDCFGDIR" "$HOME/.bashrc"
 insert_line "export JLDCFGDIR=\"$DIR\"" "$HOME/.bashrc"

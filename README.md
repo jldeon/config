@@ -1,5 +1,5 @@
 ```
-CFGDIR=.jldcfg
+CFGDIR=$HOME/.jldcfg
 cd $HOME
 git clone https://github.com/jldeon/config.git $CFGDIR
 cd $CFGDIR

@@ -24,6 +24,15 @@ It's possible to SSH tunnel Samba from Windows, but it's tricky:
 
 https://www.nikhef.nl/~janjust/CifsOverSSH/Win10Loopback.html
 
+(An easier route is a second, host-only LAN adapter through a virtualbox interface)
+
+# GUI Minimization
+
+```
+sudo apt purge libreoff* firefox thunderbird
+sudo apt install git vim
+```
+
 # Chrome
 
 ```

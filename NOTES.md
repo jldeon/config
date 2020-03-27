@@ -30,7 +30,7 @@ https://www.nikhef.nl/~janjust/CifsOverSSH/Win10Loopback.html
 
 ```
 sudo apt purge libreoff* firefox thunderbird
-sudo apt install git vim keychain lxterminal
+sudo apt install git vim keychain lxterminal sshfs
 ```
 
 # Chrome

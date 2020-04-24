@@ -35,9 +35,11 @@ touch $SUBLIME_PREF_DIR/Preferences.sublime-settings
 mv $SUBLIME_PREF_DIR/Preferences.sublime-settings $SUBLIME_PREF_DIR/Preferences.jldcfg.bak
 ln -s $DIR/sublime.cfg $SUBLIME_PREF_DIR/Preferences.sublime-settings
 
-# bash
-remove_line "JLDCFGDIR" "$HOME/.bashrc"
-insert_line "export JLDCFGDIR=\"$DIR\"" "$HOME/.bashrc"
-insert_line 'source $JLDCFGDIR/bash.cfg' "$HOME/.bashrc"
+# shell
+LOGIN_SHELL=$(getent passwd $LOGNAME | cut -d: -f7)
+SHELLTYPE=$(basename "$LOGIN_SHELL")
+remove_line "JLDCFGDIR" "$HOME/.${SHELLTYPE}rc"
+insert_line "export JLDCFGDIR=\"$DIR\"" "$HOME/.${SHELLTYPE}rc"
+insert_line "source \$JLDCFGDIR/${SHELLTYPE}.cfg" "$HOME/.${SHELLTYPE}rc"
 
 echo "Done!"

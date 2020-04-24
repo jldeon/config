@@ -49,3 +49,9 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 sudo apt-get update
 sudo apt-get install sublime-text
 ```
+
+# Quick tmux 3.0a
+
+```
+mkdir -p ~/bin/ && wget https://github.com/tmux/tmux/releases/download/3.0a/tmux-3.0a-x86_64.AppImage -O ~/bin/tmux && chmod u+x ~/bin/tmux
+```

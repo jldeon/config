@@ -15,6 +15,8 @@ function remove_line () {
     sed -i.bak $SEDSTRING $2
 }
 
+source $JLDCFGDIR/sh-func.cfg
+
 # tmux
 cd $HOME
 ln -s -f $DIR/tmux-omt/.tmux.conf
@@ -36,8 +38,7 @@ mv $SUBLIME_PREF_DIR/Preferences.sublime-settings $SUBLIME_PREF_DIR/Preferences.
 ln -s $DIR/sublime.cfg $SUBLIME_PREF_DIR/Preferences.sublime-settings
 
 # shell
-LOGIN_SHELL=$(finger $USER | grep 'Shell:*' | cut -f3 -d ":")
-SHELLTYPE=$(basename "$LOGIN_SHELL")
+SHELLTYPE=$(getshell)
 remove_line "JLDCFGDIR" "$HOME/.${SHELLTYPE}rc"
 insert_line "export JLDCFGDIR=\"$DIR\"" "$HOME/.${SHELLTYPE}rc"
 insert_line "source \$JLDCFGDIR/sh.cfg" "$HOME/.${SHELLTYPE}rc"

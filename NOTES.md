@@ -55,3 +55,40 @@ sudo apt-get install sublime-text
 ```
 mkdir -p ~/bin/ && wget https://github.com/tmux/tmux/releases/download/3.0a/tmux-3.0a-x86_64.AppImage -O ~/bin/tmux && chmod u+x ~/bin/tmux
 ```
+
+
+# Systemctl Auto Start
+
+Reference:
+- https://wiki.archlinux.org/index.php/Systemd/User
+- https://wiki.archlinux.org/index.php/Systemd#Writing_unit_files
+
+```
+mkdir -p ~/.config/systemd/user/
+vi ~/.config/systemd/user/$SERVICE_NAME.service
+```
+
+Contents of $SERVICE_NAME.service:
+```
+[Unit]
+Description=Something Useful
+
+[Service]
+ExecStart=/usr/bin/my_command --args --no-daemon
+
+[Install]
+WantedBy=default.target
+```
+
+
+```
+# Launch at startup, rather than on first login:
+sudo loginctl enable-linger $USER
+# Enable service to start on boot:
+systemctl --user enable $SERVICE_NAME
+# Start it now:
+systemctl --user start $SERVICE_NAME
+# Check output:
+journalctl --user -u $SERCICE_NAME.service
+
+```

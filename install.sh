@@ -15,7 +15,7 @@ function remove_line () {
     sed -i.bak $SEDSTRING $2
 }
 
-source $JLDCFGDIR/sh-func.cfg
+source $DIR/sh-func.cfg
 
 # tmux
 cd $HOME

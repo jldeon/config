@@ -24,7 +24,7 @@ It's possible to SSH tunnel Samba from Windows, but it's tricky:
 
 https://www.nikhef.nl/~janjust/CifsOverSSH/Win10Loopback.html
 
-(An easier route is a second, host-only LAN adapter through a virtualbox interface)
+(An easier route for a VM target is a second, host-only LAN adapter through a virtualbox interface)
 
 # GUI Minimization
 
@@ -75,10 +75,31 @@ Description=Something Useful
 
 [Service]
 ExecStart=/usr/bin/my_command --args --no-daemon
+WorkingDirectory=/path/to/wherever/
 
 [Install]
 WantedBy=default.target
 ```
+
+## If you need stdin
+
+Add to $SERVICE_NAME.service:
+
+```
+StandardInput=socket
+Sockets=service-name.socket
+
+```
+
+Create service-name.socket:
+```
+[Socket]
+ListenFIFO=%t/service-name.stdin
+Service=service-name.service
+
+```
+
+(Socket file will be created in `$XDG_RUNTIME_DIR`)
 
 
 ```
@@ -89,6 +110,6 @@ systemctl --user enable $SERVICE_NAME
 # Start it now:
 systemctl --user start $SERVICE_NAME
 # Check output:
-journalctl --user -u $SERCICE_NAME.service
+journalctl --user -u $SERVICE_NAME.service
 
 ```

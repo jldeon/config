@@ -63,6 +63,8 @@ Reference:
 - https://wiki.archlinux.org/index.php/Systemd/User
 - https://wiki.archlinux.org/index.php/Systemd#Writing_unit_files
 
+## Set up the configuration
+
 ```
 mkdir -p ~/.config/systemd/user/
 vi ~/.config/systemd/user/$SERVICE_NAME.service
@@ -81,7 +83,7 @@ WorkingDirectory=/path/to/wherever/
 WantedBy=default.target
 ```
 
-## If you need stdin
+### Additional bits if you need stdin
 
 Add to $SERVICE_NAME.service:
 
@@ -101,6 +103,7 @@ Service=service-name.service
 
 (Socket file will be created in `$XDG_RUNTIME_DIR`)
 
+## Enabling the auto-start
 
 ```
 # Launch at startup, rather than on first login:

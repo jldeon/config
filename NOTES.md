@@ -40,6 +40,20 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 ```
 
+# Firefox
+
+- Tree Style Tab
+- uBlock Origin
+
+[Hide tabs + fix window buttons](https://github.com/MrOtherGuy/firefox-csshacks) - Using [1](https://github.com/MrOtherGuy/firefox-csshacks/blob/master/chrome/hide_tabs_toolbar.css) and [2](https://github.com/MrOtherGuy/firefox-csshacks/blob/master/chrome/window_control_placeholder_support.css)
+
+With the userChrome.css:
+
+```
+@import url(window_control_placeholder_support.css);
+@import url(hide_tabs_toolbar.css);
+```
+
 # Sublime
 
 ```

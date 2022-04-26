@@ -9,7 +9,11 @@ sudo apt install openvpn-systemd-resolved
 
 # WireGuard
 
+`sudo apt install wireguard`
+
 Linux "server" config, `/etc/wireguard/wg0.conf`:
+
+Generate keys: `wg genkey | tee privatekey | wg pubkey > publickey`
 
 ```
 [Interface]
@@ -34,7 +38,7 @@ Address = <Private IP of this host, ie 192.168.x.z/32
 
 [Peer]
 PublicKey = <Public key from server>
-AllowedIPs = <Private IP from peer, ie 192.168.x.z/32
+AllowedIPs = <Private IP from peer, ie 192.168.x.y/32
 Endpoint = <Public IP and port of peer, ie a.b.c.d:51234>
 PersistentKeepalive = 30
 ```

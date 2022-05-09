@@ -29,6 +29,8 @@ AllowedIPs = <Private IP of peer host, ie 192.168.x.z/32>
 
 Bring up with `sudo wg-quick up wg0`
 
+Auto-start with: `systemctl enable --now wg-quick@wg0`
+
 Windows "client" config
 
 ```

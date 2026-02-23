@@ -73,44 +73,6 @@ sudo apt purge libreoff* firefox thunderbird
 sudo apt install git vim keychain lxterminal sshfs
 ```
 
-# Chrome
-
-```
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i google-chrome-stable_current_amd64.deb
-```
-
-# Firefox
-
-- Tree Style Tab
-- uBlock Origin
-
-[Hide tabs + fix window buttons](https://github.com/MrOtherGuy/firefox-csshacks) - Using [1](https://github.com/MrOtherGuy/firefox-csshacks/blob/master/chrome/hide_tabs_toolbar.css) and [2](https://github.com/MrOtherGuy/firefox-csshacks/blob/master/chrome/window_control_placeholder_support.css)
-
-With the userChrome.css:
-
-```
-@import url(window_control_placeholder_support.css);
-@import url(hide_tabs_toolbar.css);
-```
-
-# Sublime
-
-```
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-sudo apt-get install apt-transport-https
-echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-sudo apt-get update
-sudo apt-get install sublime-text
-```
-
-# Quick tmux 3.0a
-
-```
-mkdir -p ~/bin/ && wget https://github.com/tmux/tmux/releases/download/3.0a/tmux-3.0a-x86_64.AppImage -O ~/bin/tmux && chmod u+x ~/bin/tmux
-```
-
-
 # Systemctl Auto Start
 
 Reference:

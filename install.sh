@@ -19,8 +19,8 @@ source $DIR/sh-func.cfg
 
 # tmux
 cd $HOME
-ln -s -f $DIR/tmux-omt/.tmux.conf
-ln -s -f $DIR/tmux.cfg $HOME/.tmux.conf.local
+#ln -s -f $DIR/tmux-omt/.tmux.conf
+ln -s -f $DIR/tmux.cfg $HOME/.tmux.conf
 
 # nano
 ln -s -f $DIR/nano.cfg $HOME/.nanorc

@@ -1,9 +1,6 @@
 [submodule "vim-monokai"]
 	path = vim-monokai
 	url = https://github.com/sickill/vim-monokai
-[submodule "tmux-omt"]
-	path = tmux-omt
-	url = https://github.com/jldeon/.tmux
 [submodule "omz"]
 	path = omz
 	url = https://github.com/ohmyzsh/ohmyzsh.git
